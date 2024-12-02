@@ -1,0 +1,23 @@
+This middleware will ensure that users have the necessary role to access specific routes.
+
+roleMiddleware.js
+
+const Role = require('../models/Role');
+const authorizePermissions = (requiredRole) => {
+  return async (req, res, next) => {
+    try {
+      const userRole = req.user.role;
+      const role = await Role.findOne({ name: userRole });
+
+      if (!role || !role.permissions.includes(requiredRole)) {
+        return res.status(403).json({ error: 'Permission Denied' });
+      }
+
+      next();
+    } catch (err) {
+      res.status(500).json({ error: 'Error in permission check' });
+    }
+  };
+};
+
+module.exports = authorizePermissions;
