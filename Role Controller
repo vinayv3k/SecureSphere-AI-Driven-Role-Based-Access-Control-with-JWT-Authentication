@@ -1,0 +1,18 @@
+Manages role-based permissions.
+
+roleController.js
+
+const Role = require('../models/Role');
+
+// Create Role
+exports.createRole = async (req, res) => {
+  const { name, permissions } = req.body;
+  try {
+    const newRole = new Role({ name, permissions });
+    await newRole.save();
+    res.status(201).json(newRole);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
