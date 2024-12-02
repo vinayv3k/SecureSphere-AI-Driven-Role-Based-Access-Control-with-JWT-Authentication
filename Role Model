@@ -1,0 +1,10 @@
+This file will define roles and permissions.
+
+const mongoose = require('mongoose');
+
+const RoleSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  permissions: { type: [String], default: [] }, // Example: ['read', 'write', 'delete']
+});
+
+module.exports = mongoose.model('Role', RoleSchema);
