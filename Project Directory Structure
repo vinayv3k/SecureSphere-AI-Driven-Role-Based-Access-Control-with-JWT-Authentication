@@ -1,0 +1,22 @@
+rbac-jwt-system/
+├── config/
+│   └── db.js
+├── controllers/
+│   └── authController.js
+│   └── roleController.js
+├── middlewares/
+│   └── authMiddleware.js
+│   └── roleMiddleware.js
+├── models/
+│   └── User.js
+│   └── Role.js
+├── routes/
+│   └── authRoutes.js
+│   └── roleRoutes.js
+├── utils/
+│   └── sendEmail.js
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
+└── server.js
