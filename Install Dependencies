@@ -1,1 +1,3 @@
+Run this command to install all necessary dependencies:
+
 npm install express mongoose bcryptjs jsonwebtoken dotenv nodemailer speakeasy express-rate-limit
