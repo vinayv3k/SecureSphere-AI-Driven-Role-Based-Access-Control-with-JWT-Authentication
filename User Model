@@ -1,3 +1,5 @@
+This will define the schema for the user, including the email, password, and role.
+
 User.js:
 const mongoose = require('mongoose');
 
